@@ -1,19 +1,14 @@
-import "./App.css";
+import { FC, ReactNode } from "react";
+import { Route, Routes } from "react-router-dom";
 
-function App() {
+const App: FC = (): ReactNode => {
   return (
     <div>
-      <h1>VocabBuilder</h1>
-
-      <svg width={20} height={20}>
-        <use href="/src/assets/img/icons.svg#icon-ukraine"></use>
-      </svg>
-
-      <svg width={20} height={20}>
-        <use href="/src/assets/img/icons.svg#icon-united-kingdom"></use>
-      </svg>
+      <Routes>
+        <Route></Route>
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;
