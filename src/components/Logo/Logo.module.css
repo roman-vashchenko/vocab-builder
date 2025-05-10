@@ -1,0 +1,14 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  height: 36px;
+  margin-bottom: 12px;
+}
+
+.title {
+  color: var(--text-color-primary);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+}
