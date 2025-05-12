@@ -1,10 +1,11 @@
+import RegisterForm from "../../components/RegisterForm/RegisterForm";
 import css from "./RegisterPage.module.css";
-import Logo from "../../components/Logo/Logo";
 
 const RegisterPage = () => {
   return (
     <section className={css.section}>
-      <Logo />
+      <div className={css.bg}></div>
+      <RegisterForm />
     </section>
   );
 };

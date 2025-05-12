@@ -1,19 +1,20 @@
-import { FC, lazy, ReactNode, Suspense } from "react";
+import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
+const Layout = lazy(() => import("./components/Layout/Layout"));
 const RegisterPage = lazy(() => import("./pages/RegisterPage/RegisterPage"));
 const LoginPage = lazy(() => import("./pages/LoginPage/LoginPage"));
 
-const App: FC = (): ReactNode => {
+const App = () => {
   return (
-    <div>
-      <Suspense>
-        <Routes>
+    <Suspense fallback={null}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
           <Route path="/register" element={<RegisterPage />}></Route>
           <Route path="/login" element={<LoginPage />}></Route>
-        </Routes>
-      </Suspense>
-    </div>
+        </Route>
+      </Routes>
+    </Suspense>
   );
 };
 

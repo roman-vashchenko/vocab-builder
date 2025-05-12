@@ -1,3 +1,10 @@
 .section {
-  padding: 16px 16px 57px;
+  padding: 0px 16px 57px 16px;
+}
+.bg {
+  margin-bottom: 8px;
+  background: url("/src/assets/img/illustration-mobile.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 191px;
 }
