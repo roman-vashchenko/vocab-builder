@@ -5,7 +5,14 @@ const RegisterPage = () => {
   return (
     <section className={css.section}>
       <div className={css.bg}></div>
-      <RegisterForm />
+      <div className={css.wrapper}>
+        <h1 className={css.title}>Register</h1>
+        <p className={css.text}>
+          To start using our services, please fill out the registration form
+          below. All fields are mandatory:
+        </p>
+        <RegisterForm />
+      </div>
     </section>
   );
 };

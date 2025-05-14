@@ -4,6 +4,12 @@
   --text-color-secondary: #121417;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "MacPaw Fixel Display", sanf-serif;
   font-weight: 400;
