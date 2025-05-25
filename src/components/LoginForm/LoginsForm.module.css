@@ -1,0 +1,52 @@
+.field input {
+  width: 100%;
+  padding: 16px 18px;
+  border: 1px solid rgba(18, 20, 23, 0.1);
+  border-radius: 15px;
+  background-color: inherit;
+}
+
+.field {
+  position: relative;
+  margin-bottom: 14px;
+}
+
+.field:last-of-type {
+  margin-bottom: 32px;
+}
+
+.btn {
+  display: inline-block;
+  width: 100%;
+  padding: 16px 0;
+  margin-bottom: 16px;
+  border-radius: 30px;
+  background-color: var(--main-color);
+  border-color: transparent;
+
+  color: rgb(252, 252, 252);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.btnShowPassword {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.link {
+  display: block;
+  color: rgba(18, 20, 23, 0.5);
+  font-weight: 700;
+  line-height: 1.5;
+  text-decoration-line: underline;
+  text-align: center;
+}

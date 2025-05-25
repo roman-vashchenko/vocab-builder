@@ -1,0 +1,36 @@
+.bg {
+  margin-bottom: 8px;
+  background: url("/src/assets/img/illustration-mobile.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 191px;
+}
+
+.possibilities {
+  margin-bottom: 43px;
+  color: rgba(18, 20, 23, 0.8);
+  font-size: 14px;
+  line-height: 1.36;
+  text-align: center;
+}
+
+.wrapper {
+  padding: 32px 16px 57px;
+  border-radius: 25px 25px 0px 0px;
+  background: rgba(133, 170, 159, 0.1);
+}
+
+.title {
+  margin-bottom: 16px;
+  color: var(--text-color-primary);
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -2%;
+}
+
+.text {
+  margin-bottom: 16px;
+  color: rgba(18, 20, 23, 0.8);
+  line-height: 1.5;
+}

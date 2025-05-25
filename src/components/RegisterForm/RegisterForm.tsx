@@ -3,7 +3,8 @@ import * as yup from "yup";
 import { useForm, SubmitHandler } from "react-hook-form";
 import css from "./RegisterForm.module.css";
 import { Link } from "react-router-dom";
-// import { useState } from "react";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import { useState } from "react";
 
 interface FormValues {
   name: string;
@@ -20,13 +21,22 @@ const schema = yup
   .required();
 
 const RegisterForm = () => {
-  const { register, handleSubmit, reset } = useForm<FormValues>({
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FormValues>({
     resolver: yupResolver(schema),
   });
-  // const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [showPassword, setShowPassword] = useState<boolean>(false);
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     console.log(data);
     reset();
+  };
+
+  const togglePasswordVisibility = (): void => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -35,24 +45,38 @@ const RegisterForm = () => {
         {" "}
         <input {...register("name")} placeholder="Name" />
       </div>
+      <p style={{ color: "red" }}>{errors.name?.message}</p>
       <div className={css.field}>
         <input
           type="email"
           {...register("email", {
             pattern: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,
           })}
-          placeholder="email"
+          placeholder="Email"
         />
       </div>
+      <p style={{ color: "red" }}>{errors.email?.message}</p>
       <div className={css.field}>
         <input
-          type="password"
+          type={showPassword ? "text" : "password"}
           {...register("password", {
             pattern: /^(?=.*[a-zA-Z]{6})(?=.*\d)[a-zA-Z\d]{7}$/,
           })}
-          placeholder="password"
+          placeholder="Password"
         />
+        <button
+          type="button"
+          onClick={togglePasswordVisibility}
+          className={css.btnShowPassword}
+        >
+          {showPassword ? (
+            <FaRegEye className={css.icon} />
+          ) : (
+            <FaRegEyeSlash className={css.icon} />
+          )}
+        </button>
       </div>
+      <p style={{ color: "red" }}>{errors.password?.message}</p>
       <button type="submit" className={css.btn}>
         Register
       </button>

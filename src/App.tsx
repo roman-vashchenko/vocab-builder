@@ -10,8 +10,8 @@ const App = () => {
     <Suspense fallback={null}>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/register" element={<RegisterPage />}></Route>
-          <Route path="/login" element={<LoginPage />}></Route>
+          <Route path="register" element={<RegisterPage />}></Route>
+          <Route path="login" element={<LoginPage />}></Route>
         </Route>
       </Routes>
     </Suspense>

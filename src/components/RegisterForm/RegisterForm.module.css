@@ -7,6 +7,7 @@
 }
 
 .field {
+  position: relative;
   margin-bottom: 14px;
 }
 
@@ -26,6 +27,19 @@
   color: rgb(252, 252, 252);
   font-weight: 700;
   line-height: 1.5;
+}
+
+.btnShowPassword {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
 }
 
 .link {
