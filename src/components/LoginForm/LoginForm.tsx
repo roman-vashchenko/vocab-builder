@@ -47,8 +47,8 @@ const LoginForm = () => {
           })}
           placeholder="Email"
         />
+        <p style={{ color: "red" }}>{errors.email?.message}</p>
       </div>
-      <p style={{ color: "red" }}>{errors.email?.message}</p>
       <div className={css.field}>
         <input
           type={showPassword ? "text" : "password"}
@@ -68,8 +68,8 @@ const LoginForm = () => {
             <FaRegEyeSlash className={css.icon} />
           )}
         </button>
+        <p style={{ color: "red" }}>{errors.password?.message}</p>
       </div>
-      <p style={{ color: "red" }}>{errors.password?.message}</p>
       <button type="submit" className={css.btn}>
         Login
       </button>

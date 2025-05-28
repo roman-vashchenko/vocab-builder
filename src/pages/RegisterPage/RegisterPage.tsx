@@ -4,7 +4,12 @@ import css from "./RegisterPage.module.css";
 const RegisterPage = () => {
   return (
     <section className={css.section}>
-      <div className={css.bg}></div>
+      <div>
+        <div className={css.bg}></div>
+        <p className={css.possibilities}>
+          Word · Translation · Grammar · Progress
+        </p>
+      </div>
       <div className={css.wrapper}>
         <h1 className={css.title}>Register</h1>
         <p className={css.text}>
@@ -13,6 +18,9 @@ const RegisterPage = () => {
         </p>
         <RegisterForm />
       </div>
+      {/* <p className={css.possibilities}>
+        Word · Translation · Grammar · Progress
+      </p> */}
     </section>
   );
 };

@@ -15,6 +15,9 @@ const LoginPage = () => {
         </p>
         <LoginForm />
       </div>
+      {/* <p className={css.possibilitiesTablet}>
+        Word · Translation · Grammar · Progress
+      </p> */}
     </section>
   );
 };

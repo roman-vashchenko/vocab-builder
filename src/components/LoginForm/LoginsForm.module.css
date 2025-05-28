@@ -4,6 +4,7 @@
   border: 1px solid rgba(18, 20, 23, 0.1);
   border-radius: 15px;
   background-color: inherit;
+  margin-bottom: 5px;
 }
 
 .field {
@@ -22,11 +23,17 @@
   margin-bottom: 16px;
   border-radius: 30px;
   background-color: var(--main-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   border-color: transparent;
 
   color: rgb(252, 252, 252);
   font-weight: 700;
   line-height: 1.5;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: rgb(165, 192, 184);
 }
 
 .btnShowPassword {

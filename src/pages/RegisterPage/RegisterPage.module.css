@@ -26,3 +26,59 @@
   color: rgba(18, 20, 23, 0.8);
   line-height: 1.5;
 }
+
+.possibilities {
+  margin-bottom: 43px;
+  color: rgba(18, 20, 23, 0.8);
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: calc(140px - 32px) 70px 106px;
+    background: linear-gradient(
+      -47.29deg,
+      rgba(133, 170, 159, 0.51) -1.81%,
+      rgba(255, 255, 255, 0) 23.015%
+    );
+  }
+  .bg {
+    display: none;
+  }
+  .wrapper {
+    padding: 48px 64px;
+    border-radius: 30px;
+    margin-bottom: 72px;
+  }
+  .title {
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -2%;
+  }
+  .text {
+    margin-bottom: 32px;
+    font-size: 20px;
+    line-height: 1.5;
+  }
+}
+
+@media (min-width: 1440px) {
+  .section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    padding: 64px 100px 80px;
+  }
+  .bg {
+    display: block;
+  }
+  .wrapper {
+    max-width: 628px;
+  }
+}

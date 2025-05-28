@@ -13,6 +13,7 @@ const App = () => {
           <Route path="register" element={<RegisterPage />}></Route>
           <Route path="login" element={<LoginPage />}></Route>
         </Route>
+        <Route path="*" element={<div>Page not found</div>}></Route>
       </Routes>
     </Suspense>
   );
