@@ -48,6 +48,10 @@
     display: none;
   }
   @media (min-width: 768px) {
+    .possibilities {
+      margin-bottom: 0;
+      font-size: 16px;
+    }
     .wrapper {
       padding: 48px 64px;
       border-radius: 30px;
@@ -65,5 +69,31 @@
       font-size: 20px;
       line-height: 1.5;
     }
+  }
+}
+
+@media (min-width: 1440px) {
+  .section {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding: 64px 100px 80px;
+  }
+  .bg {
+    display: block;
+    background: url("/src/assets/img/illustration-desktop.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    min-width: 498px;
+    min-height: 435px;
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url("/src/assets/img/illustration-desktop2x.png");
+    }
+  }
+  .wrapper {
+    max-width: 628px;
+    margin-bottom: 0px;
   }
 }

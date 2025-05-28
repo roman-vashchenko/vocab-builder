@@ -1,14 +1,22 @@
+import { useMediaQuery } from "react-responsive";
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
 import css from "./RegisterPage.module.css";
 
 const RegisterPage = () => {
+  const isTablet = useMediaQuery({
+    query: "(min-width: 768px) and (max-width: 1439px)",
+  });
+  const isDesktop = useMediaQuery({ query: "(min-width: 1440px)" });
+
   return (
     <section className={css.section}>
       <div>
         <div className={css.bg}></div>
-        <p className={css.possibilities}>
-          Word · Translation · Grammar · Progress
-        </p>
+        {isDesktop && (
+          <p className={css.possibilities}>
+            Word · Translation · Grammar · Progress
+          </p>
+        )}
       </div>
       <div className={css.wrapper}>
         <h1 className={css.title}>Register</h1>
@@ -18,9 +26,11 @@ const RegisterPage = () => {
         </p>
         <RegisterForm />
       </div>
-      {/* <p className={css.possibilities}>
-        Word · Translation · Grammar · Progress
-      </p> */}
+      {isTablet && (
+        <p className={css.possibilities}>
+          Word · Translation · Grammar · Progress
+        </p>
+      )}
     </section>
   );
 };

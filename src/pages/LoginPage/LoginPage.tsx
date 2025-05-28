@@ -1,13 +1,25 @@
 import css from "./LoginPage.module.css";
 import LoginForm from "../../components/LoginForm/LoginForm";
+import { useMediaQuery } from "react-responsive";
 
 const LoginPage = () => {
+  const isMobileOrDesktop = useMediaQuery({
+    query: "(max-width: 767px) or (min-width: 1440px)",
+  });
+  const isTablet = useMediaQuery({
+    query: "(min-width: 768px) and (max-width: 1439px)",
+  });
+
   return (
     <section className={css.section}>
-      <div className={css.bg}></div>
-      <p className={css.possibilities}>
-        Word · Translation · Grammar · Progress
-      </p>
+      <div>
+        <div className={css.bg}></div>
+        {isMobileOrDesktop && (
+          <p className={css.possibilities}>
+            Word · Translation · Grammar · Progress
+          </p>
+        )}
+      </div>
       <div className={css.wrapper}>
         <h1 className={css.title}>Login</h1>
         <p className={css.text}>
@@ -15,9 +27,12 @@ const LoginPage = () => {
         </p>
         <LoginForm />
       </div>
-      {/* <p className={css.possibilitiesTablet}>
-        Word · Translation · Grammar · Progress
-      </p> */}
+
+      {isTablet && (
+        <p className={css.possibilities}>
+          Word · Translation · Grammar · Progress
+        </p>
+      )}
     </section>
   );
 };
