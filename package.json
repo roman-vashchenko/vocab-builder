@@ -12,7 +12,9 @@
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
     "@reduxjs/toolkit": "^2.7.0",
+    "clsx": "^2.1.1",
     "normalize.css": "^8.0.1",
+    "npm": "^10.9.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hot-toast": "^2.5.2",
