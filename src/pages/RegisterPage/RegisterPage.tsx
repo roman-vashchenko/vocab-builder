@@ -6,7 +6,7 @@ const RegisterPage = () => {
   const isTablet = useMediaQuery({
     query: "(min-width: 768px) and (max-width: 1439px)",
   });
-  const isDesktop = useMediaQuery({ query: "(min-width: 1440px)" });
+  const isDesktop: boolean = useMediaQuery({ query: "(min-width: 1440px)" });
 
   return (
     <section className={css.section}>

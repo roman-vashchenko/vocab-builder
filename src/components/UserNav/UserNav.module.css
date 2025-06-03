@@ -1,0 +1,27 @@
+.content {
+  color: rgb(252, 252, 252);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.36;
+  letter-spacing: 0%;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-bottom: 28px;
+}
+
+.link {
+  color: inherit;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-color: transparent;
+  background-color: transparent;
+  color: inherit;
+}

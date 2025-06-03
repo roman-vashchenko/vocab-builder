@@ -3,10 +3,10 @@ import LoginForm from "../../components/LoginForm/LoginForm";
 import { useMediaQuery } from "react-responsive";
 
 const LoginPage = () => {
-  const isMobileOrDesktop = useMediaQuery({
+  const isMobileOrDesktop: boolean = useMediaQuery({
     query: "(max-width: 767px) or (min-width: 1440px)",
   });
-  const isTablet = useMediaQuery({
+  const isTablet: boolean = useMediaQuery({
     query: "(min-width: 768px) and (max-width: 1439px)",
   });
 
