@@ -8,6 +8,7 @@
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
     background-image: url("/src/assets/img/illustration-mobile2x.png");
+    background-size: contain;
   }
 }
 
@@ -90,6 +91,7 @@
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
       background-image: url("/src/assets/img/illustration-desktop2x.png");
+      background-size: contain;
     }
   }
   .wrapper {

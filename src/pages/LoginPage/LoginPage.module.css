@@ -4,6 +4,12 @@
   background-repeat: no-repeat;
   background-position: center;
   min-height: 191px;
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url("/src/assets/img/illustration-mobile2x.png");
+    background-size: contain;
+  }
 }
 
 .possibilities {
@@ -90,6 +96,7 @@
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
       background-image: url("/src/assets/img/illustration-desktop2x.png");
+      background-size: contain;
     }
   }
   .wrapper {
