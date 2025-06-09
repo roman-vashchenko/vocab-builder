@@ -4,9 +4,11 @@
   background-repeat: no-repeat;
   background-position: center;
   min-height: 191px;
-  @media (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
+}
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .bg {
     background-image: url("/src/assets/img/illustration-mobile2x.png");
     background-size: contain;
   }
@@ -76,10 +78,10 @@
   .section {
     display: flex;
     justify-content: space-between;
-
     flex-direction: row-reverse;
     padding: 64px 100px 80px;
   }
+
   .bg {
     display: block;
     background: url("/src/assets/img/illustration-desktop.png");
@@ -87,15 +89,19 @@
     background-position: center;
     min-width: 498px;
     min-height: 435px;
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      background-image: url("/src/assets/img/illustration-desktop2x.png");
-      background-size: contain;
-    }
+    background-size: contain;
   }
+
   .wrapper {
     max-width: 628px;
     margin-bottom: 0px;
+  }
+}
+
+@media (min-width: 1440px) and (min-device-pixel-ratio: 2),
+  (min-width: 1440px) and (min-resolution: 192dpi),
+  (min-width: 1440px) and (min-resolution: 2dppx) {
+  .bg {
+    background-image: url("/src/assets/img/illustration-desktop2x.png");
   }
 }

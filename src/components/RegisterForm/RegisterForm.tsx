@@ -25,15 +25,19 @@ const RegisterForm = () => {
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors },
   } = useForm<FormValues>({
     resolver: yupResolver(schema),
+    mode: "onChange",
   });
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     console.log(data);
     reset();
   };
+
+  const passwordValue: string | undefined = watch("password");
 
   const togglePasswordVisibility = (): void => {
     setShowPassword(!showPassword);
@@ -44,7 +48,7 @@ const RegisterForm = () => {
       <div className={css.field}>
         {" "}
         <input {...register("name")} placeholder="Name" />
-        <p style={{ color: "red" }}>{errors.name?.message}</p>
+        <p style={{ color: "rgb(216, 0, 39)" }}>{errors.name?.message}</p>
       </div>
       <div className={css.field}>
         <input
@@ -54,7 +58,7 @@ const RegisterForm = () => {
           })}
           placeholder="Email"
         />
-        <p style={{ color: "red" }}>{errors.email?.message}</p>
+        <p style={{ color: "rgb(216, 0, 39)" }}>{errors.email?.message}</p>
       </div>
       <div className={css.field}>
         <input
@@ -63,6 +67,13 @@ const RegisterForm = () => {
             pattern: /^(?=.*[a-zA-Z]{6})(?=.*\d)[a-zA-Z\d]{7}$/,
           })}
           placeholder="Password"
+          style={{
+            borderColor: errors.password
+              ? "rgb(216, 0, 39)"
+              : passwordValue
+              ? "rgb(60, 191, 97)"
+              : undefined,
+          }}
         />
         <button
           type="button"
@@ -75,7 +86,13 @@ const RegisterForm = () => {
             <FaRegEyeSlash className={css.icon} />
           )}
         </button>
-        <p style={{ color: "red" }}>{errors.password?.message}</p>
+        <div style={{ color: "red" }}>
+          {errors.password ? (
+            <p style={{ color: "rgb(216, 0, 39)" }}>Error password</p>
+          ) : passwordValue ? (
+            <p style={{ color: "rgb(60, 191, 97)" }}>Success password</p>
+          ) : undefined}
+        </div>
       </div>
       <button type="submit" className={css.btn}>
         Register

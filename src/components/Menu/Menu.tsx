@@ -17,8 +17,10 @@ const Menu: FC<MenuProps> = ({ isOpen, toggleMenu }) => {
           <use href="/src/assets/img/icons.svg#icon-close"></use>
         </svg>
       </button>
-      <UserBar />
-      <UserNav toggleMenu={toggleMenu} />
+      <div className={css.menuContainer}>
+        <UserBar />
+        <UserNav toggleMenu={toggleMenu} />
+      </div>
       {/* <div className={css.bg}></div> */}
     </div>
   );
