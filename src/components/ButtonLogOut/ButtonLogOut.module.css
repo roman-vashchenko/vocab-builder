@@ -1,0 +1,17 @@
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 20px;
+  border-color: transparent;
+  background-color: transparent;
+  color: inherit;
+}
+
+@media (min-width: 1440px) {
+  .btn {
+    line-height: 1.5;
+    font-weight: 500;
+    padding-left: 0;
+  }
+}

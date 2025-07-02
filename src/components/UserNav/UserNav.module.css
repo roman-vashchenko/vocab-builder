@@ -14,22 +14,30 @@
 }
 
 .link {
+  width: fit-content;
   color: inherit;
-}
-
-.btn {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  border-color: transparent;
-  background-color: transparent;
-  color: inherit;
+  padding: 12px 20px;
 }
 
 .active {
-  padding: 12px 20px;
-  width: fit-content;
   color: var(--text-color-primary);
   border-radius: 15px;
   background: rgb(252, 252, 252);
+}
+
+@media (min-width: 1440px) {
+  .content {
+    color: var(--text-color-primary);
+  }
+  .nav {
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+  }
+  .active {
+    width: fit-content;
+    color: rgb(252, 252, 252);
+    border-radius: 15px;
+    background: var(--main-color);
+  }
 }

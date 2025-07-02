@@ -21,7 +21,6 @@ const Menu: FC<MenuProps> = ({ isOpen, toggleMenu }) => {
         <UserBar />
         <UserNav toggleMenu={toggleMenu} />
       </div>
-      {/* <div className={css.bg}></div> */}
     </div>
   );
 };
