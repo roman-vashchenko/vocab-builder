@@ -1,23 +1,22 @@
 .container {
   position: relative;
+  padding: 16px;
 }
 
 .header {
-  padding: 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 @media (min-width: 768px) {
-  .header {
+  .container {
     padding: 32px;
   }
 }
 
 @media (min-width: 1440px) {
-  .header {
+  .container {
     padding: 20px 100px;
-    justify-content: space-between;
   }
 }

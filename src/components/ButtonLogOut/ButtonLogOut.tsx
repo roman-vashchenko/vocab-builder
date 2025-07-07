@@ -9,10 +9,10 @@ interface ButtonLogOutProps {
 
 const ButtonLogOut: FC<ButtonLogOutProps> = ({ toggleMenu }) => {
   const isDesktop: boolean = useMediaQuery({
-    query: "(min-width: 1439px)",
+    query: "(min-width: 1440px)",
   });
   const handleMenuClick = () => {
-    if (window.innerWidth < 1440) {
+    if (!isDesktop) {
       if (toggleMenu) toggleMenu();
     }
   };

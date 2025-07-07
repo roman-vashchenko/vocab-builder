@@ -7,9 +7,10 @@
 }
 
 .name {
+  position: relative;
+  top: 1px;
   font-weight: 500;
   line-height: 1.37;
-  letter-spacing: 0%;
 }
 
 .iconWrapper {

@@ -10,7 +10,7 @@ interface UserNavProps {
 }
 
 const UserNav: FC<UserNavProps> = ({ toggleMenu }) => {
-  const isNone: boolean = useMediaQuery({
+  const isMobileOrTablet: boolean = useMediaQuery({
     query: "(max-width: 1440px)",
   });
 
@@ -48,7 +48,7 @@ const UserNav: FC<UserNavProps> = ({ toggleMenu }) => {
           Training
         </NavLink>
       </nav>
-      {isNone && <ButtonLogOut toggleMenu={toggleMenu} />}
+      {isMobileOrTablet && <ButtonLogOut toggleMenu={toggleMenu} />}
     </div>
   );
 };
