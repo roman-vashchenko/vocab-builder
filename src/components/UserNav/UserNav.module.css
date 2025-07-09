@@ -15,10 +15,10 @@
 .link {
   width: fit-content;
   color: inherit;
-  padding: 12px 20px;
 }
 
 .active {
+  padding: 12px 20px;
   color: var(--text-color-primary);
   border-radius: 15px;
   background: rgb(252, 252, 252);
