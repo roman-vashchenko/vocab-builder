@@ -1,0 +1,9 @@
+.buttons {
+  margin-bottom: 18px;
+}
+
+.label {
+  color: var(--text-color-primary);
+  font-size: 12px;
+  line-height: 1.4;
+}

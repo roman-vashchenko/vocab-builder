@@ -1,26 +1,5 @@
-.input {
-  padding: 12px 24px;
-  width: 100%;
-  border: 1px solid rgba(18, 20, 23, 0.1);
-  border-radius: 15px;
-  margin-bottom: 8px;
-  outline: none;
-  transition: border var(--transition);
-}
-
-.input::placeholder {
-  color: var(--text-color-primary);
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-.input:focus,
-.select:focus {
-  border: 1px solid rgb(133, 170, 159);
-}
-
 .filters {
-  margin-bottom: 40px;
+  margin-bottom: 8px;
 }
 
 .field {
@@ -33,19 +12,24 @@
   right: 24px;
 }
 
-.select {
+.input {
   padding: 12px 24px;
   width: 100%;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   border: 1px solid rgba(18, 20, 23, 0.1);
   border-radius: 15px;
+  margin-bottom: 8px;
   outline: none;
   transition: border var(--transition);
 }
 
-.input:focus,
-.select:focus {
+.input::placeholder {
+  position: relative;
+  top: 1px;
+  color: var(--text-color-primary);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.input:focus {
   border: 1px solid rgb(133, 170, 159);
 }
