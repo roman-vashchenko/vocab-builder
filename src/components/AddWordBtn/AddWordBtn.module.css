@@ -1,0 +1,12 @@
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-color: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--text-color-primary);
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 1.5;
+}

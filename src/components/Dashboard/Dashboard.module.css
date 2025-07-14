@@ -1,1 +1,50 @@
+.content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
 
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-color: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--text-color-primary);
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 1.5;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-color-primary);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .content {
+    position: relative;
+    top: 2px;
+    margin-bottom: 0;
+  }
+  .wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .dashboard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+  }
+}

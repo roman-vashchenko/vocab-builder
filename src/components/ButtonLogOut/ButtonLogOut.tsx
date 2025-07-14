@@ -19,13 +19,21 @@ const ButtonLogOut: FC<ButtonLogOutProps> = ({ toggleMenu }) => {
   return (
     <button type="button" className={css.btn} onClick={handleMenuClick}>
       Log out
-      <svg width={16} height={16}>
-        {!isDesktop ? (
+      {!isDesktop ? (
+        <svg
+          width={16}
+          height={16}
+          style={{ position: "relative", top: "-1px" }}
+        >
           <use href="/src/assets/img/icons.svg#icon-arrow-right"></use>
-        ) : (
-          <FaArrowRightLong width={16} height={16} />
-        )}
-      </svg>
+        </svg>
+      ) : (
+        <FaArrowRightLong
+          width={16}
+          height={16}
+          style={{ position: "relative", top: "-1px" }}
+        />
+      )}
     </button>
   );
 };

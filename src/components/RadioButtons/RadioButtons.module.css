@@ -1,4 +1,6 @@
 .buttons {
+  display: flex;
+  gap: 16px;
   margin-bottom: 18px;
 }
 
@@ -6,4 +8,15 @@
   color: var(--text-color-primary);
   font-size: 12px;
   line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+  .buttons {
+    margin-bottom: 0;
+  }
+
+  .label {
+    font-size: 14px;
+    line-height: 1.3;
+  }
 }

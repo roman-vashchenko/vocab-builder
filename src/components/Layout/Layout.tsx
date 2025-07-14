@@ -22,7 +22,7 @@ const Layout = () => {
   };
 
   return (
-    <div className={css.container}>
+    <div className={css.layout}>
       <header className={css.header}>
         <Logo />
         {isMobileOrTablet && <ButtonMenu toggleMenu={toggleMenu} />}
@@ -30,9 +30,11 @@ const Layout = () => {
         {isDesktop && <UserBar />}
       </header>
       <main>
-        <Suspense fallback={<div>loading...</div>}>
-          <Outlet />
-        </Suspense>
+        <div className={css.container}>
+          <Suspense fallback={<div>loading...</div>}>
+            <Outlet />
+          </Suspense>
+        </div>
       </main>
       {isMobileOrTablet && <Menu isOpen={isOpen} toggleMenu={toggleMenu} />}
     </div>

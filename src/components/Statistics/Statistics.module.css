@@ -17,3 +17,9 @@
   font-weight: 500;
   line-height: 1.4;
 }
+
+@media (min-width: 768px) {
+  .content {
+    margin-bottom: 0px;
+  }
+}
