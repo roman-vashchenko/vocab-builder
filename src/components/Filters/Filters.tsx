@@ -14,10 +14,6 @@ const Filters = () => {
     { value: "verb", label: "Verb" },
     { value: "participle", label: "Participle" },
     { value: "noun", label: "Noun" },
-    { value: "noun", label: "Noun" },
-    { value: "noun", label: "Noun" },
-    { value: "noun", label: "Noun" },
-    { value: "noun", label: "Noun" },
   ];
 
   const customStyles: StylesConfig<OptionType, false> = {
@@ -66,6 +62,9 @@ const Filters = () => {
         ? "rotate(180deg)"
         : "rotate(0deg)",
       transition: "transform 0.2s ease",
+      "&:hover": {
+        color: "#333",
+      },
     }),
     indicatorSeparator: () => ({ display: "none" }),
   };

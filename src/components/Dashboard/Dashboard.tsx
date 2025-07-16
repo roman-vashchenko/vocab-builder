@@ -4,6 +4,7 @@ import Statistics from "../Statistics/Statistics";
 import AddWordBtn from "../AddWordBtn/AddWordBtn";
 import { Link } from "react-router-dom";
 import css from "./Dashboard.module.css";
+import WordsTable from "../WordsTable/WordsTable";
 
 const Dashboard = () => {
   return (
@@ -11,7 +12,7 @@ const Dashboard = () => {
       <Filters />
       <div className={css.wrapper}>
         <Statistics />
-        <div className={css.content}>
+        <div className={css.buttons}>
           <AddWordBtn />
           <Link to="/training" className={css.link}>
             Train oneself
@@ -27,6 +28,7 @@ const Dashboard = () => {
           </Link>
         </div>
       </div>
+      <WordsTable />
     </div>
   );
 };
