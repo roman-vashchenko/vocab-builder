@@ -1,8 +1,12 @@
+.dashboard {
+  margin-bottom: 32px;
+}
+
 .buttons {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 32px;
+  /* margin-bottom: 32px; */
 }
 
 .btn {
@@ -28,6 +32,9 @@
 }
 
 @media (min-width: 768px) {
+  .dashboard {
+    margin-bottom: 49px;
+  }
   .buttons {
     position: relative;
     top: 2px;
@@ -45,6 +52,5 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 28px;
   }
 }

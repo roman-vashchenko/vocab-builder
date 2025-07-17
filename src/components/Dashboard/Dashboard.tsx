@@ -4,7 +4,6 @@ import Statistics from "../Statistics/Statistics";
 import AddWordBtn from "../AddWordBtn/AddWordBtn";
 import { Link } from "react-router-dom";
 import css from "./Dashboard.module.css";
-import WordsTable from "../WordsTable/WordsTable";
 
 const Dashboard = () => {
   return (
@@ -28,7 +27,6 @@ const Dashboard = () => {
           </Link>
         </div>
       </div>
-      <WordsTable />
     </div>
   );
 };
