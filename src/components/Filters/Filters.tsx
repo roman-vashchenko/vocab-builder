@@ -41,7 +41,8 @@ const Filters = () => {
     }),
     menu: (base) => ({
       ...base,
-      borderRadius: "10px",
+      borderRadius: "15px",
+      overflow: "hidden",
       boxShadow: "0px 4px 47px 0px rgba(18, 20, 23, 0.08)",
       background: "rgb(255, 255, 255)",
     }),

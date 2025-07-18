@@ -1,3 +1,5 @@
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 import css from "./WordsTable.module.css";
 
 import {
@@ -30,7 +32,7 @@ const data: Word[] = [
     category: "verb",
     isIrregular: true,
     owner: "64c6dde64b0c8534d41f9b5c",
-    progress: 50,
+    progress: 70,
   },
   {
     _id: "64c6e8ecabbd3d21328a00d4",
@@ -67,9 +69,36 @@ const WordsTable = () => {
     {
       header: "Progress",
       accessorKey: "progress",
+      cell: ({ row }) => (
+        <Box position="relative" display="inline-flex">
+          <CircularProgress
+            variant="determinate"
+            value={100}
+            sx={{
+              color: "rgb(212, 248, 211)",
+            }}
+            size={25}
+            thickness={7}
+          />
+          <CircularProgress
+            variant="determinate"
+            value={row.original.progress}
+            sx={{
+              color: "rgb(43, 214, 39)",
+              position: "absolute",
+              left: 0,
+              "& .MuiCircularProgress-circle": {
+                strokeLinecap: "round",
+              },
+            }}
+            size={25}
+            thickness={7}
+          />
+        </Box>
+      ),
     },
     {
-      id: "popoverBtn",
+      id: "button",
       header: "",
     },
   ];
@@ -81,33 +110,35 @@ const WordsTable = () => {
 
   return (
     <div className={css.content}>
-      <table className={css.table}>
-        <thead>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id} className={css.tr}>
-              {headerGroup.headers.map((header) => (
-                <th key={header.id} className={css.th}>
-                  {flexRender(
-                    header.column.columnDef.header,
-                    header.getContext()
-                  )}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody>
-          {table.getRowModel().rows.map((row) => (
-            <tr key={row.original._id} className={css.tr}>
-              {row.getVisibleCells().map((cell) => (
-                <td key={cell.id} className={css.td}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className={css.wrapper}>
+        <table className={css.table}>
+          <thead>
+            {table.getHeaderGroups().map((headerGroup) => (
+              <tr key={headerGroup.id} className={css.tr}>
+                {headerGroup.headers.map((header) => (
+                  <th key={header.id} className={css.th}>
+                    {flexRender(
+                      header.column.columnDef.header,
+                      header.getContext()
+                    )}
+                  </th>
+                ))}
+              </tr>
+            ))}
+          </thead>
+          <tbody>
+            {table.getRowModel().rows.map((row) => (
+              <tr key={row.original._id} className={css.tr}>
+                {row.getVisibleCells().map((cell) => (
+                  <td key={cell.id} className={css.td}>
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

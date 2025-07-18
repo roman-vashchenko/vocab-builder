@@ -2,6 +2,12 @@
   margin-bottom: 32px;
 }
 
+.wrapper {
+  border-radius: 8px;
+  border-bottom: 1px solid rgb(219, 219, 219);
+  overflow: hidden;
+}
+
 .table {
   width: 100%;
   border-collapse: collapse;
@@ -18,17 +24,12 @@
   background: rgba(133, 170, 159, 0.1);
 }
 
-.th:first-child {
-  border-radius: 8px 0 0 0;
-}
-
 .th:nth-child(3) {
   display: none;
 }
 
 .th:last-child {
   border-right: none;
-  border-radius: 0 8px 0 0;
 }
 
 .td {
@@ -44,13 +45,12 @@
   display: none;
 }
 
-.td:first-child {
-  border-radius: 0px 0px 0px 8px;
+.td:last-child {
+  border-right: none;
 }
 
-.td:last-child {
-  border-radius: 0px 0px 8px 0px;
-  border-right: none;
+tr:last-child .td {
+  border-bottom: none;
 }
 
 @media (min-width: 768px) {
