@@ -1,5 +1,3 @@
-import CircularProgress from "@mui/material/CircularProgress";
-import Box from "@mui/material/Box";
 import css from "./WordsTable.module.css";
 
 import {
@@ -8,6 +6,8 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
+import ProgressBar from "../ProgresBar/ProgressBar";
+import PopoverButton from "../PopoverButton/PopoverButton";
 
 interface Word {
   _id: string;
@@ -40,7 +40,7 @@ const data: Word[] = [
     ua: "кіт",
     category: "noun",
     owner: "64c6dde64b0c8534d41f9b5c",
-    progress: 30,
+    progress: 85,
   },
   {
     _id: "64c6e8ecabbd3d21328a00d3",
@@ -69,37 +69,12 @@ const WordsTable = () => {
     {
       header: "Progress",
       accessorKey: "progress",
-      cell: ({ row }) => (
-        <Box position="relative" display="inline-flex">
-          <CircularProgress
-            variant="determinate"
-            value={100}
-            sx={{
-              color: "rgb(212, 248, 211)",
-            }}
-            size={25}
-            thickness={7}
-          />
-          <CircularProgress
-            variant="determinate"
-            value={row.original.progress}
-            sx={{
-              color: "rgb(43, 214, 39)",
-              position: "absolute",
-              left: 0,
-              "& .MuiCircularProgress-circle": {
-                strokeLinecap: "round",
-              },
-            }}
-            size={25}
-            thickness={7}
-          />
-        </Box>
-      ),
+      cell: ({ row }) => <ProgressBar value={row.original.progress} />,
     },
     {
-      id: "button",
+      id: "popoverButton",
       header: "",
+      cell: () => <PopoverButton />,
     },
   ];
   const table = useReactTable({

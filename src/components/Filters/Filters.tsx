@@ -73,7 +73,12 @@ const Filters = () => {
     <div className={css.filters}>
       <div className={css.field}>
         <FiSearch width={20} height={20} className={css.icon} />
-        <input type="text" placeholder="Find the word" className={css.input} />
+        <input
+          type="text"
+          placeholder="Find the word"
+          className={css.input}
+          name="word"
+        />
       </div>
       <Select<OptionType, false>
         options={options}

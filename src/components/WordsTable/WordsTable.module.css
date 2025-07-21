@@ -45,6 +45,12 @@
   display: none;
 }
 
+/* .td:nth-child(4) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
 .td:last-child {
   border-right: none;
 }
@@ -68,5 +74,10 @@ tr:last-child .td {
   .th:nth-child(3),
   .td:nth-child(3) {
     display: table-cell;
+  }
+  .td:nth-child(4) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

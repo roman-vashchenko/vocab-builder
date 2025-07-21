@@ -1,0 +1,22 @@
+.popoverBtn {
+  border: transparent;
+  outline: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: transparent;
+  outline: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn:first-child {
+  margin-bottom: 8px;
+}
