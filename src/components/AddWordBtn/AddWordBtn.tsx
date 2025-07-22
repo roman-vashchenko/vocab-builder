@@ -1,9 +1,14 @@
 import { FaPlus } from "react-icons/fa6";
 import css from "./AddWordBtn.module.css";
+import { FC } from "react";
 
-const AddWordBtn = () => {
+interface AddWordBtnProps {
+  openModal: () => void;
+}
+
+const AddWordBtn: FC<AddWordBtnProps> = ({ openModal }) => {
   return (
-    <button className={css.btn} type="button">
+    <button className={css.btn} type="button" onClick={() => openModal()}>
       Add word
       <FaPlus
         width={20}

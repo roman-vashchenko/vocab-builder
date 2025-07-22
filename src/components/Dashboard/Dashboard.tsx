@@ -4,15 +4,20 @@ import Statistics from "../Statistics/Statistics";
 import AddWordBtn from "../AddWordBtn/AddWordBtn";
 import { Link } from "react-router-dom";
 import css from "./Dashboard.module.css";
+import { FC } from "react";
 
-const Dashboard = () => {
+interface DashboardProps {
+  openModal: () => void;
+}
+
+const Dashboard: FC<DashboardProps> = ({ openModal }) => {
   return (
     <div className={css.dashboard}>
       <Filters />
       <div className={css.wrapper}>
         <Statistics />
         <div className={css.buttons}>
-          <AddWordBtn />
+          <AddWordBtn openModal={openModal} />
           <Link to="/training" className={css.link}>
             Train oneself
             <FaArrowRightLong

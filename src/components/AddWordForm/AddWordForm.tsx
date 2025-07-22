@@ -1,11 +1,9 @@
-import { FiSearch } from "react-icons/fi";
-import css from "./Filters.module.css";
+import OptionType from "../../types";
 import { StylesConfig } from "react-select";
 import Select from "react-select";
 import RadioButtons from "../RadioButtons/RadioButtons";
-import OptionType from "../../types";
 
-const Filters = () => {
+const AddWordForm = () => {
   const options: OptionType[] = [
     { value: "verb", label: "Verb" },
     { value: "participle", label: "Participle" },
@@ -66,24 +64,30 @@ const Filters = () => {
     indicatorSeparator: () => ({ display: "none" }),
   };
   return (
-    <div className={css.filters}>
-      <div className={css.field}>
-        <FiSearch width={20} height={20} className={css.icon} />
-        <input
-          type="text"
-          placeholder="Find the word"
-          className={css.input}
-          name="word"
-        />
-      </div>
+    <div>
+      <p>Add word</p>
+      <p>
+        Adding a new word to the dictionary is an important step in enriching
+        the language base and expanding the vocabulary.
+      </p>
       <Select<OptionType, false>
         options={options}
         placeholder="Categories"
         styles={customStyles}
       />
       <RadioButtons />
+      <input
+        type="text"
+        pattern="^(?![A-Za-z])[А-ЯІЄЇҐґа-яієїʼ\s]+$"
+        name="ua"
+      />
+      <input
+        type="text"
+        pattern="\b[A-Za-z'-]+(?:\s+[A-Za-z'-]+)*\b"
+        name="en"
+      />
     </div>
   );
 };
 
-export default Filters;
+export default AddWordForm;
