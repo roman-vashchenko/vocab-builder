@@ -20,6 +20,11 @@ const AddWordModal: FC<addModalProps> = ({ isOpen, onClose }) => {
         overlayClassName={css.overlay}
         bodyOpenClassName={css.bodyOpen}
       >
+        <p className={css.nameModal}>Add word</p>
+        <p className={css.textModal}>
+          Adding a new word to the dictionary is an important step in enriching
+          the language base and expanding the vocabulary.
+        </p>
         <AddWordForm />
       </ReactModal>
     </div>

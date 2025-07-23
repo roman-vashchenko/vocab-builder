@@ -1,0 +1,27 @@
+.wrap {
+  margin-bottom: 32px;
+}
+
+.field {
+  width: 100%;
+  padding: 12px 24px;
+  border: 1px solid rgb(209, 213, 219);
+  border-radius: 15px;
+  background-color: var(--main-color);
+  color: rgb(252, 252, 252);
+  font-weight: 500;
+  line-height: 1.5;
+  outline: none;
+}
+
+.field:first-child {
+  margin-bottom: 16px;
+}
+
+.field:-webkit-autofill,
+.field:-webkit-autofill:hover,
+.field:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px rgb(133, 170, 159) inset !important;
+  -webkit-text-fill-color: white !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
