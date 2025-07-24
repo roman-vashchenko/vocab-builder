@@ -1,5 +1,21 @@
-.wrap {
+.fieldsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
   margin-bottom: 32px;
+}
+
+.iconLanguage {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 114px;
+  margin-bottom: 8px;
+}
+
+.iconLanguage p {
+  position: relative;
+  top: 3px;
 }
 
 .field {
@@ -12,10 +28,7 @@
   font-weight: 500;
   line-height: 1.5;
   outline: none;
-}
-
-.field:first-child {
-  margin-bottom: 16px;
+  margin-bottom: 5px;
 }
 
 .field:-webkit-autofill,
@@ -24,4 +37,62 @@
   -webkit-box-shadow: 0 0 0 1000px rgb(133, 170, 159) inset !important;
   -webkit-text-fill-color: white !important;
   transition: background-color 5000s ease-in-out 0s;
+}
+
+.textError {
+  color: rgb(216, 0, 39);
+}
+
+.wrapButtons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 12px 0;
+  width: 145px;
+  background-color: var(--main-color);
+  border: 1px solid rgba(252, 252, 252, 0.4);
+  border-radius: 30px;
+  color: rgb(252, 252, 252);
+  font-weight: 700;
+  line-height: 1.5;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.btn:hover,
+.btn:focus {
+  color: var(--text-color-primary);
+  background-color: rgb(252, 252, 252);
+}
+
+@media (min-width: 768px) {
+  .fieldsWrapper {
+    gap: 25px;
+  }
+  .inputWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .iconLanguage {
+    margin-bottom: 0;
+  }
+  .field {
+    width: 354px;
+    margin-bottom: 0;
+  }
+
+  .textError {
+    color: rgb(216, 0, 39);
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+  .btn {
+    width: 245px;
+  }
 }

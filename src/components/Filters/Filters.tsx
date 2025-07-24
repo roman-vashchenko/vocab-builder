@@ -23,6 +23,7 @@ const Filters = () => {
       borderColor: state.isFocused
         ? "rgb(133, 170, 159)"
         : "rgba(18, 20, 23, 0.1)",
+      transition: "border-color 250ms cubic-bezier(0.4, 0, 0.2, 1)",
       "@media (min-width: 768px)": {
         marginBottom: 0,
         width: "164px",

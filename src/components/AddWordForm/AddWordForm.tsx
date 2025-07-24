@@ -9,12 +9,17 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Radio from "@mui/material/Radio";
 import * as yup from "yup";
+import { FC } from "react";
 
 interface FormValues {
   ua: string;
   en: string;
   category: string;
   isIrregular?: boolean;
+}
+
+interface AddWordFormProps {
+  onClose: () => void;
 }
 
 const schema = yup
@@ -25,7 +30,7 @@ const schema = yup
   })
   .required();
 
-const AddWordForm = () => {
+const AddWordForm: FC<AddWordFormProps> = ({ onClose }) => {
   const {
     register,
     handleSubmit,
@@ -54,10 +59,13 @@ const AddWordForm = () => {
       marginBottom: "8px",
       borderColor: "rgb(209, 213, 219)",
       "@media (min-width: 768px)": {
-        marginBottom: 0,
+        marginBottom: 8,
         width: "204px",
         fontWeight: 500,
         cursor: "pointer",
+        "&:hover": {
+          borderColor: "rgb(209, 213, 219)",
+        },
       },
     }),
     menu: (base) => ({
@@ -113,7 +121,7 @@ const AddWordForm = () => {
               />
             )}
           />
-          <p style={{ color: "red" }}>{errors.category?.message}</p>
+          <p style={{ color: "rgb(216, 0, 39)" }}>{errors.category?.message}</p>
           <Controller
             name="isIrregular"
             control={control}
@@ -166,15 +174,36 @@ const AddWordForm = () => {
             )}
           />
         </FormControl>
-        <div className={css.wrap}>
-          <input type="text" {...register("ua")} className={css.field} />
-          <p style={{ color: "red" }}>{errors.ua?.message}</p>
-          <input type="text" {...register("en")} className={css.field} />
-          <p style={{ color: "red" }}>{errors.en?.message}</p>
+        <div className={css.fieldsWrapper}>
+          <div className={css.inputWrapper}>
+            <div className={css.iconLanguage}>
+              <svg width={28} height={28}>
+                <use href="/src/assets/img/icons.svg#icon-ukraine"></use>
+              </svg>
+              <p>Ukrainian</p>
+            </div>
+            <input type="text" {...register("ua")} className={css.field} />
+            <p className={css.textError}>{errors.ua?.message}</p>
+          </div>
+          <div className={css.inputWrapper}>
+            <div className={css.iconLanguage}>
+              <svg width={28} height={28}>
+                <use href="/src/assets/img/icons.svg#icon-united-kingdom"></use>
+              </svg>
+              <p>English</p>
+            </div>
+            <input type="text" {...register("en")} className={css.field} />
+            <p className={css.textError}>{errors.en?.message}</p>
+          </div>
         </div>
-        <button type="submit" className={css.btn}>
-          Додати
-        </button>
+        <div className={css.wrapButtons}>
+          <button type="submit" className={css.btn}>
+            Add
+          </button>
+          <button type="button" className={css.btn} onClick={onClose}>
+            Cancel
+          </button>
+        </div>
       </form>
     </div>
   );
