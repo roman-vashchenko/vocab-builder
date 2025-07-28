@@ -46,7 +46,7 @@ const PopoverButton = () => {
         <Typography sx={{ p: "12px 24px" }}>
           <button type="button" className={css.btn}>
             <span>
-              <svg width={16} height={16}>
+              <svg width={16} height={16} className={css.icon}>
                 <use href="/src/assets/img/icons.svg#icon-edit"></use>
               </svg>
             </span>
@@ -54,7 +54,7 @@ const PopoverButton = () => {
           </button>
           <button type="button" className={css.btn}>
             <span>
-              <svg width={16} height={16}>
+              <svg width={16} height={16} className={css.icon}>
                 <use href="/src/assets/img/icons.svg#icon-delete"></use>
               </svg>
             </span>

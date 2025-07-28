@@ -8,6 +8,7 @@ import {
 } from "@tanstack/react-table";
 import ProgressBar from "../ProgresBar/ProgressBar";
 import PopoverButton from "../PopoverButton/PopoverButton";
+import { useMediaQuery } from "react-responsive";
 
 interface Word {
   _id: string;
@@ -53,13 +54,52 @@ const data: Word[] = [
 ];
 
 const WordsTable = () => {
+  const isTabletOrDesktop: boolean = useMediaQuery({
+    query: "(min-width: 768px)",
+  });
+
   const columns: ColumnDef<SelectedColumns>[] = [
     {
-      header: "Word",
+      header: () =>
+        isTabletOrDesktop ? (
+          <div className={css.headerCell}>
+            <span
+              style={{
+                position: "relative",
+                top: 1,
+              }}
+            >
+              Word
+            </span>
+            <svg width={28} height={28}>
+              <use href="/src/assets/img/icons.svg#icon-united-kingdom"></use>
+            </svg>
+          </div>
+        ) : (
+          "Word"
+        ),
       accessorKey: "en",
     },
     {
-      header: "Translation",
+      header: () =>
+        isTabletOrDesktop ? (
+          <div className={css.headerCell}>
+            <span
+              style={{
+                position: "relative",
+                top: 1,
+              }}
+            >
+              Translation
+            </span>
+            <svg width={28} height={28}>
+              <use href="/src/assets/img/icons.svg#icon-ukraine"></use>
+            </svg>
+          </div>
+        ) : (
+          "Translation"
+        ),
+
       accessorKey: "ua",
     },
     {

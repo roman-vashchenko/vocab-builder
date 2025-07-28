@@ -65,13 +65,28 @@ tr:last-child .td {
     padding: 22px;
     font-size: 18px;
   }
+  .headerCell {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
   .th:nth-child(3),
   .td:nth-child(3) {
     display: table-cell;
   }
-  .td:nth-child(4) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+@media (min-width: 1440px) {
+  .table {
+    text-align: left;
+  }
+  .headerCell {
+    gap: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .td:last-child {
+    text-align: center;
   }
 }

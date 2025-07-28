@@ -1,15 +1,20 @@
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 import { FC } from "react";
+import { useMediaQuery } from "react-responsive";
+import css from "./ProgressBar.module.css";
 
 interface ProgressBarProps {
   value: number;
 }
 
 const ProgressBar: FC<ProgressBarProps> = ({ value }) => {
+  const isTabletOrDesktop: boolean = useMediaQuery({
+    query: "(min-width: 768px)",
+  });
   return (
-    <>
-      {" "}
+    <div className={css.content}>
+      {isTabletOrDesktop && <span className={css.progressValue}>{value}%</span>}
       <Box position="relative" display="inline-flex">
         <CircularProgress
           variant="determinate"
@@ -35,7 +40,7 @@ const ProgressBar: FC<ProgressBarProps> = ({ value }) => {
           thickness={7}
         />
       </Box>
-    </>
+    </div>
   );
 };
 

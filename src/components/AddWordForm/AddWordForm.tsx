@@ -24,8 +24,14 @@ interface AddWordFormProps {
 
 const schema = yup
   .object({
-    ua: yup.string().required(),
-    en: yup.string().required(),
+    ua: yup
+      .string()
+      .required()
+      .matches(/^[А-ЯІЄЇҐґа-яієїʼ\s]+$/u, "only ukrainian letters are allowed"),
+    en: yup
+      .string()
+      .required()
+      .matches(/^[A-Za-z'’\- ]+$/u, "only english letters allowed"),
     category: yup.string().required(),
   })
   .required();
@@ -41,6 +47,7 @@ const AddWordForm: FC<AddWordFormProps> = ({ onClose }) => {
   });
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
+    console.log(errors);
     console.log(data);
   };
   const options: OptionType[] = [
@@ -97,7 +104,7 @@ const AddWordForm: FC<AddWordFormProps> = ({ onClose }) => {
         : "rotate(0deg)",
       transition: "transform 0.2s ease",
       "&:hover": {
-        color: "#333",
+        color: "rgb(252, 252, 252)",
       },
     }),
     indicatorSeparator: () => ({ display: "none" }),
@@ -126,9 +133,10 @@ const AddWordForm: FC<AddWordFormProps> = ({ onClose }) => {
             name="isIrregular"
             control={control}
             defaultValue={false}
-            render={({ field }) => (
+            render={({ field: { onChange, value } }) => (
               <RadioGroup
-                {...field}
+                value={String(value)}
+                onChange={(e) => onChange(e.target.value === "true")}
                 sx={{ display: "flex", gap: "16px", flexDirection: "row" }}
               >
                 <FormControlLabel
@@ -192,7 +200,13 @@ const AddWordForm: FC<AddWordFormProps> = ({ onClose }) => {
               </svg>
               <p>English</p>
             </div>
-            <input type="text" {...register("en")} className={css.field} />
+            <input
+              type="text"
+              {...register("en", {
+                pattern: /\b[A-Za-z'-]+(?:\s+[A-Za-z'-]+)*\b/,
+              })}
+              className={css.field}
+            />
             <p className={css.textError}>{errors.en?.message}</p>
           </div>
         </div>

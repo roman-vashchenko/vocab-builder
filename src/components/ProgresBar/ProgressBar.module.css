@@ -1,0 +1,21 @@
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.progressValue {
+  position: relative;
+  top: 2px;
+  color: var(-text-color-primary);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+@media (min-width: 1440px) {
+  .content {
+    justify-content: flex-start;
+  }
+}
