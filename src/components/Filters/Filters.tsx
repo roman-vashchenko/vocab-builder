@@ -6,11 +6,12 @@ import RadioButtons from "../RadioButtons/RadioButtons";
 import OptionType from "../../types";
 
 const Filters = () => {
-  const options: OptionType[] = [
-    { value: "verb", label: "Verb" },
-    { value: "participle", label: "Participle" },
-    { value: "noun", label: "Noun" },
-  ];
+  const categories: string[] = ["verb", "participle", "noun"];
+
+  const options: OptionType[] = categories.map((category) => ({
+    value: category,
+    label: category.charAt(0).toUpperCase() + category.slice(1),
+  }));
 
   const customStyles: StylesConfig<OptionType, false> = {
     control: (base, state) => ({

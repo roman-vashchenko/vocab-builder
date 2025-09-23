@@ -76,8 +76,10 @@
 
 @media (min-width: 1440px) {
   .section {
+    min-height: calc(100vh - 88px);
     display: flex;
     justify-content: space-between;
+    justify-content: space-around;
     flex-direction: row-reverse;
     padding: 64px 100px 80px;
   }
@@ -90,10 +92,12 @@
     min-width: 498px;
     min-height: 435px;
     background-size: contain;
+    margin-bottom: 16px;
   }
 
   .wrapper {
     max-width: 628px;
+    height: 592px;
     margin-bottom: 0px;
   }
 }

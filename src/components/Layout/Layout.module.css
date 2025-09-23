@@ -9,30 +9,14 @@
   padding: 16px;
 }
 
-.container {
-  padding-left: 16px;
-  padding-right: 16px;
-  background-color: rgb(248, 248, 248);
-  min-height: 100vh;
-}
-
 @media (min-width: 768px) {
   .header {
     padding: 32px;
-  }
-  .container {
-    padding-left: 32px;
-    padding-right: 32px;
   }
 }
 
 @media (min-width: 1440px) {
   .header {
     padding: 20px 100px;
-  }
-
-  .container {
-    padding-left: 100px;
-    padding-right: 100px;
   }
 }

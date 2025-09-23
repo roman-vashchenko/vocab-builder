@@ -30,11 +30,9 @@ const Layout = () => {
         {isDesktop && <UserBar />}
       </header>
       <main>
-        <div className={css.container}>
-          <Suspense fallback={<div>loading...</div>}>
-            <Outlet />
-          </Suspense>
-        </div>
+        <Suspense fallback={<div style={{ padding: 15 }}>Loading...</div>}>
+          <Outlet />
+        </Suspense>
       </main>
       {isMobileOrTablet && <Menu isOpen={isOpen} toggleMenu={toggleMenu} />}
     </div>

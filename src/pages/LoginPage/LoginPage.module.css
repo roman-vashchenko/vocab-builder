@@ -19,7 +19,7 @@
   margin-bottom: 43px;
   color: rgba(18, 20, 23, 0.8);
   font-size: 14px;
-  line-height: 1.36;
+  line-height: 1.5;
   text-align: center;
 }
 
@@ -49,44 +49,49 @@
     padding: calc(140px - 32px) 70px 106px;
     background: linear-gradient(
       -47.29deg,
-      rgba(133, 170, 159, 0.51) -1.81%,
+      rgba(133, 170, 159, 0.51) -0.81%,
       rgba(255, 255, 255, 0) 23.015%
     );
   }
   .bg {
     display: none;
   }
-  @media (min-width: 768px) {
-    .possibilities {
-      margin-bottom: 0;
-      font-size: 16px;
-    }
-    .wrapper {
-      padding: 48px 64px;
-      border-radius: 30px;
-      margin-bottom: 72px;
-    }
-    .title {
-      margin-bottom: 20px;
-      font-size: 40px;
-      font-weight: 600;
-      line-height: 1.2;
-      letter-spacing: -2%;
-    }
-    .text {
-      margin-bottom: 32px;
-      font-size: 20px;
-      line-height: 1.5;
-    }
+
+  .possibilities {
+    margin-bottom: 0;
+    font-size: 16px;
+  }
+  .wrapper {
+    padding: 48px 64px;
+    border-radius: 30px;
+    margin-bottom: 72px;
+  }
+  .title {
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -2%;
+  }
+  .text {
+    margin-bottom: 32px;
+    font-size: 20px;
+    line-height: 1.5;
   }
 }
 
 @media (min-width: 1440px) {
   .section {
+    min-height: calc(100vh - 88px);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: row-reverse;
     padding: 64px 100px 80px;
+    background: linear-gradient(
+      -47.29deg,
+      rgba(133, 170, 159, 0.51) -0.81%,
+      rgba(255, 255, 255, 0) 23.015%
+    );
   }
   .bg {
     display: block;
@@ -94,13 +99,16 @@
     background-repeat: no-repeat;
     background-position: center;
     min-width: 498px;
+
     min-height: 435px;
     background-size: contain;
+    margin-bottom: 16px;
   }
 
   .wrapper {
     max-width: 628px;
     margin-bottom: 0px;
+    height: 515px;
   }
 }
 
