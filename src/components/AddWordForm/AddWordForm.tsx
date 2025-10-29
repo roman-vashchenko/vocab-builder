@@ -86,6 +86,9 @@ const AddWordForm: FC<AddWordFormProps> = ({ onClose }) => {
       ...base,
       backgroundColor: "#fff",
       color: state.isSelected ? "rgb(133, 170, 159)" : "rgba(18, 20, 23, 0.5)",
+      "&:hover": {
+        color: "#333",
+      },
     }),
     singleValue: (base) => ({
       ...base,

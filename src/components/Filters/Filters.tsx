@@ -48,6 +48,9 @@ const Filters = () => {
       ...base,
       backgroundColor: "#fff",
       color: state.isSelected ? "rgb(133, 170, 159)" : "rgba(18, 20, 23, 0.5)",
+      "&:hover": {
+        color: "#333",
+      },
     }),
     placeholder: (base) => ({
       ...base,
